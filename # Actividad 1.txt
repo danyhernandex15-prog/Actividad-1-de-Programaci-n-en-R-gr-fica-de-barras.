@@ -1,0 +1,35 @@
+# Actividad 1
+# Confianza en instituciones políticas
+
+library(ggplot2)
+
+confianza <- data.frame(
+  Institucion = c(
+    "INE",
+    "Congreso",
+    "Gobierno Estatal",
+    "Gobierno Federal",
+    "Partidos Politicos"
+  ),
+  Personas = c(
+    65,
+    40,
+    55,
+    35,
+    20
+  )
+)
+
+print(confianza)
+
+ggplot(confianza,
+       aes(x = Institucion,
+           y = Personas,
+           fill = Institucion)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Confianza en instituciones políticas",
+    x = "Institución",
+    y = "Número de personas"
+  ) +
+  theme_minimal()
